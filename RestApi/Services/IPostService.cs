@@ -8,5 +8,6 @@ namespace RestApi.Services
     {
         List<Post> GetPosts();
         Post GetPostById(Guid postId);
+        bool UpdatePost(Post postToUpdate);
     }
 }

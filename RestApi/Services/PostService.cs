@@ -31,5 +31,18 @@ namespace RestApi.Services
         {
             return _posts;
         }
+
+        public bool UpdatePost(Post postToUpdate)
+        {
+            var exists = GetPostById(postToUpdate.Id) != null;
+
+            if (!exists)
+                return false;
+
+            var index = _posts.FindIndex(s => s.Id == postToUpdate.Id);
+            _posts[index] = postToUpdate;
+
+            return true;
+        }
     }
 }

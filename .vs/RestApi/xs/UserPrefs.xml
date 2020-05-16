@@ -1,25 +1,28 @@
 ﻿<Properties StartupConfiguration="{2DC3904A-198F-4B50-BF97-D5CA86D882BA}|Default">
   <MonoDevelop.Ide.ItemProperties.RestApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RestApi/Controllers/V1/PostsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RestApi/Services/PostService.cs">
     <Files>
-      <File FileName="RestApi/Startup.cs" Line="49" Column="39" />
-      <File FileName="RestApi/Contracts/V1/ApiRoutes.cs" Line="13" Column="61" />
-      <File FileName="RestApi/Controllers/V1/PostsController.cs" Line="18" Column="10" />
-      <File FileName="RestApi/Installers/DbInstaller.cs" Line="21" Column="64" />
+      <File FileName="RestApi/Controllers/V1/PostsController.cs" Line="66" Column="1" />
+      <File FileName="RestApi/Services/PostService.cs" Line="37" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RestApi" expanded="True">
             <Node name="RestApi" expanded="True">
-              <Node name="Controllers" expanded="True">
+              <Node name="Contracts" expanded="True">
                 <Node name="V1" expanded="True">
-                  <Node name="PostsController.cs" selected="True" />
+                  <Node name="Requests" expanded="True" />
                 </Node>
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="V1" expanded="True" />
               </Node>
               <Node name="Domain" expanded="True" />
               <Node name="Installers" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="PostService.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -29,7 +32,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ondergenc/Documents/repos/RestApi/RestApi/RestApi/Controllers/V1/PostsController.cs" relfile="RestApi/Controllers/V1/PostsController.cs" line="60" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
