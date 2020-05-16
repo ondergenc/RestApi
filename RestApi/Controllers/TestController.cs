@@ -1,10 +1,14 @@
 ﻿using System;
+using Microsoft.AspNetCore.Mvc;
+
 namespace RestApi.Controllers
 {
-    public class TestController
+    public class TestController : Controller
     {
-        public TestController()
+        [HttpGet("api/user")]
+        public IActionResult Get()
         {
+            return Ok(new { name = "User1" });
         }
     }
 }
