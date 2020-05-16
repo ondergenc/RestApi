@@ -26,6 +26,10 @@
     <Folder Include="Controllers\" />
     <Folder Include="Data\" />
     <Folder Include="Options\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Controllers\V1\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Contracts\V1\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
