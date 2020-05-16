@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using RestApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using RestApi.Services;
 
 namespace RestApi.Installers
 {
@@ -16,6 +17,8 @@ namespace RestApi.Installers
             });
             services.AddIdentityCore<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                         .AddEntityFrameworkStores<DataContext>();
+
+            services.AddSingleton<IPostService, PostService>();
         }
     }
 }

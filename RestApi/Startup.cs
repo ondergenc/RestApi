@@ -61,7 +61,8 @@ namespace RestApi
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "api/v1/{controller=Posts}/{action=posts}/{id?}");
+                    pattern: "/swagger");
+                    //pattern: "api/v1/{controller=Posts}/{action=posts}/{id?}");
             });
         }
     }

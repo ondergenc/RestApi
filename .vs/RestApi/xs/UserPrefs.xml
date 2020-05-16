@@ -4,25 +4,22 @@
     <Files>
       <File FileName="RestApi/Startup.cs" Line="49" Column="39" />
       <File FileName="RestApi/Contracts/V1/ApiRoutes.cs" Line="13" Column="61" />
-      <File FileName="RestApi/Controllers/V1/PostsController.cs" Line="30" Column="57" />
+      <File FileName="RestApi/Controllers/V1/PostsController.cs" Line="18" Column="10" />
+      <File FileName="RestApi/Installers/DbInstaller.cs" Line="21" Column="64" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RestApi" expanded="True">
             <Node name="RestApi" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Contracts" expanded="True">
-                <Node name="V1" expanded="True">
-                  <Node name="Responses" expanded="True" />
-                </Node>
-              </Node>
               <Node name="Controllers" expanded="True">
                 <Node name="V1" expanded="True">
                   <Node name="PostsController.cs" selected="True" />
                 </Node>
               </Node>
+              <Node name="Domain" expanded="True" />
               <Node name="Installers" expanded="True" />
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
