@@ -1,10 +1,19 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+
 namespace RestApi.Installers
 {
-    public class MvcInstaller
+    public class MvcInstaller: IInstaller
     {
-        public MvcInstaller()
+        public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddControllersWithViews();
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "Rest API", Version = "v1" });
+            });
         }
     }
 }

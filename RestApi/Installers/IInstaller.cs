@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace RestApi.Installers
 {
-    public interface Installer
+    public interface IInstaller
     {
         void InstallServices(IServiceCollection services, IConfiguration configuration);
     }

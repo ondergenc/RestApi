@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{2DC3904A-198F-4B50-BF97-D5CA86D882BA}|Default">
   <MonoDevelop.Ide.ItemProperties.RestApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RestApi/Contracts/ApiRoutes.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RestApi/Startup.cs">
     <Files>
-      <File FileName="RestApi/Startup.cs" Line="39" Column="23" />
-      <File FileName="RestApi/Controllers/TestController.cs" Line="4" Column="33" />
-      <File FileName="RestApi/Controllers/PostsController.cs" Line="18" Column="1" />
-      <File FileName="RestApi/Contracts/ApiRoutes.cs" Line="4" Column="18" />
+      <File FileName="RestApi/Startup.cs" Line="22" Column="43" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,15 +10,8 @@
           <Node name="RestApi" expanded="True">
             <Node name="RestApi" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="Contracts" expanded="True">
-                <Node name="ApiRoutes.cs" selected="True" />
-              </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="V1" expanded="True" />
-              </Node>
-              <Node name="Data" expanded="True" />
-              <Node name="Domain" expanded="True" />
-              <Node name="Options" expanded="True" />
+              <Node name="Installers" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
