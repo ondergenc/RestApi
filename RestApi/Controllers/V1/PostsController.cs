@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RestApi.Contracts.V1;
 using RestApi.Contracts.V1.Requests;
@@ -68,6 +69,17 @@ namespace RestApi.Controllers.V1
                 return Ok(post);
 
             return NotFound("No Records Found!");
+        }
+
+        [HttpDelete(ApiRoutes.Posts.Delete)]
+        public IActionResult Delete([FromRoute]Guid postId)
+        {
+            var deleted = _postService.DeletePost(postId);
+
+            if (!deleted)
+                return NotFound("No Records Found");
+
+            return StatusCode(StatusCodes.Status204NoContent);
         }
     }
 }
