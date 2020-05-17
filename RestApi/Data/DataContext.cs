@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RestApi.Domain;
 
 namespace RestApi.Data
 {
@@ -9,5 +10,7 @@ namespace RestApi.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
+
+        public DbSet<Post> Posts { get; set; }
     }
 }
