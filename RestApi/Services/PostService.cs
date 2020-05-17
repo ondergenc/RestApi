@@ -55,5 +55,17 @@ namespace RestApi.Services
 
             return deleted > 0;
         }
+
+        public async Task<bool> UserOwnsPostAsync(Guid postId, string userId)
+        {
+            var post = await _dataContext.Posts.SingleOrDefaultAsync(s => s.Id == postId);
+
+            if (post == null)
+            {
+                return false;
+            }
+
+            return post.UserId == userId;
+        }
     }
 }

@@ -11,6 +11,7 @@ using RestApi.Contracts.V1;
 using RestApi.Contracts.V1.Requests;
 using RestApi.Contracts.V1.Responses;
 using RestApi.Domain;
+using RestApi.Extensions;
 using RestApi.Services;
 
 namespace RestApi.Controllers.V1
@@ -45,7 +46,11 @@ namespace RestApi.Controllers.V1
         [HttpPost(ApiRoutes.Posts.Create)]
         public async Task<IActionResult> Create([FromBody] CreatePostRequest postRequest)
         {
-            var post = new Post { Name = postRequest.Name };
+            var post = new Post
+            {
+                Name = postRequest.Name,
+                UserId = HttpContext.GetUserId()
+            };
 
             await _postService.CreatePostAsync(post);
 
@@ -60,11 +65,15 @@ namespace RestApi.Controllers.V1
         [HttpPut(ApiRoutes.Posts.Update)]
         public async Task<IActionResult> Update([FromRoute]Guid postId, [FromBody] UpdatePostRequest request)
         {
-            var post = new Post
+            var userOwnPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
+
+            if(!userOwnPost)
             {
-                Id = postId,
-                Name = request.Name
-            };
+                return Unauthorized(new { error = "You do not change this post" });
+            }
+
+            var post = await _postService.GetPostByIdAsync(postId);
+            post.Name = request.Name;
 
             var updated = await _postService.UpdatePostAsync(post);
             if(updated)
@@ -76,6 +85,13 @@ namespace RestApi.Controllers.V1
         [HttpDelete(ApiRoutes.Posts.Delete)]
         public async Task<IActionResult> Delete([FromRoute]Guid postId)
         {
+            var userOwnPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
+
+            if (!userOwnPost)
+            {
+                return Unauthorized(new { error = "You do not delete this post" });
+            }
+
             var deleted = await _postService.DeletePostAsync(postId);
 
             if (!deleted)
