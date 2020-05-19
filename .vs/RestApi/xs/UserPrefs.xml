@@ -6,17 +6,24 @@
         <State name="__root__">
           <Node name="RestApi" expanded="True">
             <Node name="RestApi" expanded="True">
+              <Node name="Contracts" expanded="True">
+                <Node name="V1" expanded="True">
+                  <Node name="Requests" expanded="True" />
+                  <Node name="Responses" expanded="True" />
+                </Node>
+              </Node>
               <Node name="Controllers" expanded="True">
                 <Node name="V1" expanded="True" />
               </Node>
+              <Node name="Data" expanded="True" />
               <Node name="Domain" expanded="True" />
               <Node name="Extensions" expanded="True" />
               <Node name="Installers" expanded="True" />
               <Node name="Migrations" expanded="True" />
-              <Node name="Options" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="IdentityService.cs" selected="True" />
+              <Node name="Options" expanded="True">
+                <Node name="JwtSettings.cs" selected="True" />
               </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
