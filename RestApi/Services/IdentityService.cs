@@ -20,7 +20,7 @@ namespace RestApi.Services
         private readonly JwtSettings _jwtSettings;
         private readonly TokenValidationParameters _tokenValidationParameters;
         private readonly DataContext _context;
- 
+
         public IdentityService(UserManager<IdentityUser> userManager, JwtSettings jwtSettings, TokenValidationParameters tokenValidationParameters, DataContext context)
         {
             _userManager = userManager;
@@ -60,7 +60,7 @@ namespace RestApi.Services
             try
             {
                 var principal = tokenHandler.ValidateToken(token, _tokenValidationParameters, out var validatedToken);
-                if(!IsJwtValidSecurityAlgorithm(validatedToken))
+                if (!IsJwtValidSecurityAlgorithm(validatedToken))
                 {
                     return null;
                 }
@@ -141,7 +141,7 @@ namespace RestApi.Services
 
             await _context.RefreshTokens.AddAsync(refreshToken);
             await _context.SaveChangesAsync();
-            
+
             return new AuthenticationResult
             {
                 Success = true,
@@ -153,7 +153,7 @@ namespace RestApi.Services
         public async Task<AuthenticationResult> RefreshTokenAsync(string token, string refreshToken)
         {
             var validationToken = GetPricipalFromToken(token);
-            if(validationToken == null)
+            if (validationToken == null)
             {
                 return new AuthenticationResult { Errors = new[] { "Invalid Token" } };
             }
@@ -162,7 +162,7 @@ namespace RestApi.Services
             var expiryDateTimeUtc = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 .AddSeconds(expiryDateUnix);
 
-            if(expiryDateTimeUtc > DateTime.UtcNow)
+            if (expiryDateTimeUtc > DateTime.UtcNow)
             {
                 return new AuthenticationResult { Errors = new[] { "This token hasn't expired yet" } };
             }
@@ -175,7 +175,7 @@ namespace RestApi.Services
                 return new AuthenticationResult { Errors = new[] { "This refresh token does not exist" } };
             }
 
-            if(DateTime.UtcNow > storedRefreshToken.ExpiryDate)
+            if (DateTime.UtcNow > storedRefreshToken.ExpiryDate)
             {
                 return new AuthenticationResult { Errors = new[] { "This refresh token has expired" } };
             }
