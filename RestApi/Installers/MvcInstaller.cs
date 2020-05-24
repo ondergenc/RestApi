@@ -21,6 +21,8 @@ namespace RestApi.Installers
 
             services.AddScoped<IIdentityService, IdentityService>();
 
+            services.AddMvc(options => { options.EnableEndpointRouting = false; }).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0); 
+
             services.AddControllersWithViews();
 
             var tokenValidationParameters = new TokenValidationParameters
@@ -46,6 +48,8 @@ namespace RestApi.Installers
                 x.SaveToken = true;
                 x.TokenValidationParameters = tokenValidationParameters;
             });
+
+            services.AddAuthorization();
 
             services.AddSwaggerGen(x =>
             {

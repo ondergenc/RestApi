@@ -13,5 +13,9 @@ namespace RestApi.Services
         Task<bool> UpdatePostAsync(Post postToUpdate);
         Task<bool> DeletePostAsync(Guid postId);
         Task<bool> UserOwnsPostAsync(Guid postId, string userId);
+        Task<List<Tag>> GetAllTagsAync();
+        Task<bool> CreateTagAsync(Tag tag);
+        Task<Tag> GetTagByNameAsync(string tagName);
+        Task<bool> DeleteTagAsync(string tagName);
     }
 }

@@ -1,43 +1,29 @@
 ﻿<Properties StartupConfiguration="{2DC3904A-198F-4B50-BF97-D5CA86D882BA}|Default">
-  <MonoDevelop.Ide.ItemProperties.RestApi PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RestApi.IntegrationTests/PostsControllerTests.cs">
-    <Files>
-      <File FileName="RestApi.IntegrationTests/IntegrationTest.cs" Line="47" Column="48" />
-      <File FileName="RestApi.IntegrationTests/PostsControllerTests.cs" Line="21" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.ItemProperties.RestApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RestApi" expanded="True">
             <Node name="RestApi" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Domain" expanded="True" />
-              <Node name="Installers" expanded="True" />
-              <Node name="Migrations" expanded="True">
-                <Node name="20200517090321_InitialCreate.cs" expanded="True" />
-                <Node name="20200517195056_Added_UserId.cs" expanded="True" />
-                <Node name="20200518215204_Added_RefreshTokens.cs" expanded="True" />
-                <Node name="20200519132533_Added_RefreshTokensAutoGenerateIdentity.cs" expanded="True" />
-              </Node>
-              <Node name="Services" expanded="True" />
-            </Node>
-            <Node name="RestApi.IntegrationTests" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="PostsControllerTests.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="RestApi" expanded="True">
-            <Node name="RestApi.IntegrationTests" expanded="True">
-              <Node name="RestApi.IntegrationTests" expanded="True">
-                <Node name="PostsControllerTests" expanded="True">
-                  <Node name="GetAll_WithoutAnyPost_ReturnsEmptyResponse" selected="True" />
+              <Node name="Contracts" expanded="True">
+                <Node name="V1" expanded="True">
+                  <Node name="Requests" expanded="True" />
+                  <Node name="Responses" expanded="True" />
                 </Node>
               </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="V1" expanded="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Domain" expanded="True" />
+              <Node name="Extensions" expanded="True" />
+              <Node name="Installers" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Options" expanded="True">
+                <Node name="JwtSettings.cs" selected="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -46,11 +32,8 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ondergenc/Documents/repos/RestApi/RestApi/RestApi.IntegrationTests/UnitTest1.cs" relfile="RestApi.IntegrationTests/UnitTest1.cs" line="23" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
