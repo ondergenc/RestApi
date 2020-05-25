@@ -54,7 +54,10 @@ namespace RestApi.Installers
                 x.TokenValidationParameters = tokenValidationParameters;
             });
 
-            services.AddAuthorization();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("TagViewer", builder => builder.RequireClaim("tags.view", "true"));
+            });
 
             services.AddSwaggerGen(x =>
             {
