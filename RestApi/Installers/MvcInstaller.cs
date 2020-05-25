@@ -9,6 +9,8 @@ using System.Text;
 using System.Collections.Generic;
 using RestApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using RestApi.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestApi.Installers
 {
@@ -56,8 +58,13 @@ namespace RestApi.Installers
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("TagViewer", builder => builder.RequireClaim("tags.view", "true"));
+                options.AddPolicy("MustWorkForRestApi", policy =>
+                {
+                    policy.AddRequirements(new WorksForCompanyRequirement("restapi.com"));
+                });
             });
+
+            services.AddSingleton<IAuthorizationHandler, WorksForCompanyHandler>();
 
             services.AddSwaggerGen(x =>
             {

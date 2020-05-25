@@ -16,7 +16,8 @@ namespace RestApi.Installers
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddIdentityCore<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                        .AddEntityFrameworkStores<DataContext>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<DataContext>();
 
             services.AddScoped<IPostService, PostService>();
         }

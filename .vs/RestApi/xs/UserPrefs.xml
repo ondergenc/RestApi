@@ -6,25 +6,17 @@
         <State name="__root__">
           <Node name="RestApi" expanded="True">
             <Node name="RestApi" expanded="True">
-              <Node name="Contracts" expanded="True">
+              <Node name="Authorization" expanded="True" />
+              <Node name="Controllers" expanded="True">
                 <Node name="V1" expanded="True">
-                  <Node name="Requests" expanded="True" />
-                  <Node name="Responses" expanded="True" />
+                  <Node name="TagController.cs" selected="True" />
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="V1" expanded="True" />
-              </Node>
-              <Node name="Extensions" expanded="True" />
               <Node name="Installers" expanded="True" />
               <Node name="Services" expanded="True" />
             </Node>
             <Node name="RestApi.IntegrationTests" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="PostsControllerTests.cs" selected="True" />
+              <Node name="Dependencies" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -46,10 +38,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ondergenc/Documents/repos/RestApi/RestApi/RestApi.IntegrationTests/UnitTest1.cs" relfile="RestApi.IntegrationTests/UnitTest1.cs" line="23" column="1" />
-      <Breakpoint file="/Users/ondergenc/Documents/repos/RestApi/RestApi/RestApi.IntegrationTests/PostsControllerTests.cs" relfile="RestApi.IntegrationTests/PostsControllerTests.cs" line="32" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
