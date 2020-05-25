@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Collections.Generic;
 using RestApi.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RestApi.Installers
 {
@@ -21,8 +22,12 @@ namespace RestApi.Installers
 
             services.AddScoped<IIdentityService, IdentityService>();
 
-            services.AddMvc(options => { options.EnableEndpointRouting = false; }).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0); 
-
+            services
+                .AddMvc(options =>
+                {
+                    options.EnableEndpointRouting = false;
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddControllersWithViews();
 
             var tokenValidationParameters = new TokenValidationParameters
