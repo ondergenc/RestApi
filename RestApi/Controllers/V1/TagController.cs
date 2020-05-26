@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,16 +18,20 @@ namespace RestApi.Controllers.V1
     public class TagController: Controller
     {
         private readonly IPostService _postService;
+        private readonly IMapper _mapper;
 
-        public TagController(IPostService postService)
+        public TagController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
+            _mapper = mapper;
         }
 
         [HttpGet(ApiRoutes.Tags.GetAll)]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _postService.GetAllTagsAync());
+            var tags = await _postService.GetAllTagsAync();
+            var tagResponses = _mapper.Map<List<TagResponse>>(tags);
+            return Ok(tagResponses);
         }
 
         [HttpGet(ApiRoutes.Tags.Get)]
@@ -38,7 +44,7 @@ namespace RestApi.Controllers.V1
                 return NotFound();
             }
 
-            return Ok(await _postService.GetTagByNameAsync(tagName));
+            return Ok(_mapper.Map<TagResponse>(tag));
         }
 
         [HttpPost(ApiRoutes.Tags.Create)]
@@ -61,7 +67,7 @@ namespace RestApi.Controllers.V1
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.Tags.Get.Replace("{tagName}", newTag.Name);
 
-            var response = new TagResponse { Name = newTag.Name };
+            var response = _mapper.Map<TagResponse>(newTag);
 
             return Created(locationUri, response);
         }
