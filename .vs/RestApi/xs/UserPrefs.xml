@@ -1,12 +1,6 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{2DC3904A-198F-4B50-BF97-D5CA86D882BA}|Default">
   <MonoDevelop.Ide.ItemProperties.RestApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RestApi/Controllers/V1/TagController.cs">
-    <Files>
-      <File FileName="RestApi/Controllers/V1/PostsController.cs" Line="13" Column="22" />
-      <File FileName="RestApi/Data/DataContext.cs" Line="4" Column="1" />
-      <File FileName="RestApi/Contracts/V1/Responses/PostResponse.cs" Line="17" Column="1" />
-      <File FileName="RestApi/Controllers/V1/TagController.cs" Line="6" Column="42" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -18,12 +12,15 @@
                 </Node>
               </Node>
               <Node name="Controllers" expanded="True">
-                <Node name="V1" expanded="True">
-                  <Node name="TagController.cs" selected="True" />
-                </Node>
+                <Node name="V1" expanded="True" />
               </Node>
               <Node name="Data" expanded="True" />
-              <Node name="Mapping" expanded="True" />
+              <Node name="Filters" expanded="True">
+                <Node name="ValidationFilter.cs" selected="True" />
+              </Node>
+              <Node name="Installers" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Validators" expanded="True" />
             </Node>
             <Node name="RestApi.IntegrationTests" expanded="True">
               <Node name="Dependencies" expanded="True" />
@@ -48,7 +45,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ondergenc/Documents/repos/RestApi/RestApi/RestApi/Services/PostService.cs" relfile="RestApi/Services/PostService.cs" line="94" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

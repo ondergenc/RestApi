@@ -11,6 +11,8 @@ using RestApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using RestApi.Authorization;
 using Microsoft.AspNetCore.Authorization;
+using FluentValidation.AspNetCore;
+using RestApi.Filters;
 
 namespace RestApi.Installers
 {
@@ -28,7 +30,9 @@ namespace RestApi.Installers
                 .AddMvc(options =>
                 {
                     options.EnableEndpointRouting = false;
+                    options.Filters.Add<ValidationFilter>();
                 })
+                .AddFluentValidation(mvcConfiguration => mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>())
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddControllersWithViews();
 

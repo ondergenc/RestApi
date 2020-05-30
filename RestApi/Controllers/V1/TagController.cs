@@ -15,6 +15,7 @@ using RestApi.Services;
 namespace RestApi.Controllers.V1
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin,Poster")]
+    [Produces("application/json")]
     public class TagController: Controller
     {
         private readonly IPostService _postService;
@@ -49,6 +50,7 @@ namespace RestApi.Controllers.V1
 
         [HttpPost(ApiRoutes.Tags.Create)]
         [ProducesResponseType(typeof(TagResponse), 201)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
         public async Task<IActionResult> Create([FromBody] CreateTagRequest request)
         {
             var newTag = new Tag
@@ -61,7 +63,7 @@ namespace RestApi.Controllers.V1
             var created = await _postService.CreateTagAsync(newTag);
             if (!created)
             {
-                return BadRequest(new { error = "Unable to create tag" });
+                return BadRequest(new ErrorResponse(new ErrorModel { Message = "Unable to create tag" }));
             }
 
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
