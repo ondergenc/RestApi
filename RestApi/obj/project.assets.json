@@ -1155,6 +1155,16 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "RestApi.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/RestApi.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RestApi.Contracts.dll": {}
+        }
       }
     }
   },
@@ -4070,6 +4080,11 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "RestApi.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../RestApi.Contracts/RestApi.Contracts.csproj",
+      "msbuildProject": "../RestApi.Contracts/RestApi.Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4082,6 +4097,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 3.1.4",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.4",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 3.1.3",
+      "RestApi.Contracts >= 1.0.0",
       "Swashbuckle.AspNetCore.Filters >= 5.1.1",
       "Swashbuckle.AspNetCore.Swagger >= 5.4.1",
       "Swashbuckle.AspNetCore.SwaggerGen >= 5.4.1",
@@ -4115,7 +4131,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/ondergenc/Documents/repos/RestApi/RestApi/RestApi.Contracts/RestApi.Contracts.csproj": {
+              "projectPath": "/Users/ondergenc/Documents/repos/RestApi/RestApi/RestApi.Contracts/RestApi.Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

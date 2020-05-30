@@ -13,6 +13,8 @@ using RestApi.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using FluentValidation.AspNetCore;
 using RestApi.Filters;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 
 namespace RestApi.Installers
 {
@@ -69,6 +71,12 @@ namespace RestApi.Installers
             });
 
             services.AddSingleton<IAuthorizationHandler, WorksForCompanyHandler>();
+
+            //services.AddHttpsRedirection(options =>
+            //{
+            //    options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+            //    options.HttpsPort = 5001;
+            //});
         }
     }
 }

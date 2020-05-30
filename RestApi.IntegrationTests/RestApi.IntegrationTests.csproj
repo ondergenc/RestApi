@@ -23,5 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RestApi\RestApi.csproj" />
+    <ProjectReference Include="..\RestApi.Contracts\RestApi.Contracts.csproj" />
   </ItemGroup>
 </Project>

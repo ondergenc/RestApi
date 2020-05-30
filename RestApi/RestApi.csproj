@@ -32,10 +32,7 @@
     <Folder Include="Domain\" />
     <Folder Include="Controllers\V1\" />
     <Folder Include="Contracts\" />
-    <Folder Include="Contracts\V1\" />
     <Folder Include="Installers\" />
-    <Folder Include="Contracts\V1\Requests\" />
-    <Folder Include="Contracts\V1\Responses\" />
     <Folder Include="Services\" />
     <Folder Include="Extensions\" />
     <Folder Include="Authorization\" />
@@ -65,5 +62,10 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="5.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RestApi.Contracts\RestApi.Contracts.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
