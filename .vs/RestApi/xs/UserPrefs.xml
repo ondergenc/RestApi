@@ -1,26 +1,24 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{2DC3904A-198F-4B50-BF97-D5CA86D882BA}|Default">
   <MonoDevelop.Ide.ItemProperties.RestApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="RestApi/SwaggerExamples/Responses/TagResponseExample.cs">
+    <Files>
+      <File FileName="RestApi/Installers/SwaggerInstaller.cs" Line="19" Column="36" />
+      <File FileName="RestApi/Controllers/V1/TagController.cs" Line="61" Column="23" />
+      <File FileName="RestApi/SwaggerExamples/Requests/CreateTagRequestExample.cs" Line="13" Column="40" />
+      <File FileName="RestApi/SwaggerExamples/Responses/TagResponseExample.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RestApi" expanded="True">
             <Node name="RestApi" expanded="True">
-              <Node name="Contracts" expanded="True">
-                <Node name="V1" expanded="True">
-                  <Node name="Responses" expanded="True" />
+              <Node name="Installers" expanded="True" />
+              <Node name="SwaggerExamples" expanded="True">
+                <Node name="Requests" expanded="True" />
+                <Node name="Responses" expanded="True">
+                  <Node name="TagResponseExample.cs" selected="True" />
                 </Node>
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="V1" expanded="True" />
-              </Node>
-              <Node name="Data" expanded="True" />
-              <Node name="Filters" expanded="True">
-                <Node name="ValidationFilter.cs" selected="True" />
-              </Node>
-              <Node name="Installers" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="Validators" expanded="True" />
             </Node>
             <Node name="RestApi.IntegrationTests" expanded="True">
               <Node name="Dependencies" expanded="True" />
@@ -30,13 +28,7 @@
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="RestApi" expanded="True">
-            <Node name="RestApi.IntegrationTests" expanded="True">
-              <Node name="RestApi.IntegrationTests" expanded="True">
-                <Node name="PostsControllerTests" expanded="True" selected="True" />
-              </Node>
-            </Node>
-          </Node>
+          <Node name="RestApi" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

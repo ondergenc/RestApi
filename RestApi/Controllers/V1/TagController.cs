@@ -15,7 +15,7 @@ using RestApi.Services;
 namespace RestApi.Controllers.V1
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin,Poster")]
-    [Produces("application/json")]
+    [Produces("application/json")] 
     public class TagController: Controller
     {
         private readonly IPostService _postService;
@@ -27,6 +27,10 @@ namespace RestApi.Controllers.V1
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Returns all the tags in the saved
+        /// </summary>
+        /// <response code="200">Returns all the tags in the saved</response>
         [HttpGet(ApiRoutes.Tags.GetAll)]
         public async Task<IActionResult> GetAll()
         {
@@ -35,6 +39,10 @@ namespace RestApi.Controllers.V1
             return Ok(tagResponses);
         }
 
+        /// <summary>
+        /// Return a spesific tag by tagName
+        /// </summary>
+        /// <param name="tagName"></param>
         [HttpGet(ApiRoutes.Tags.Get)]
         public async Task<IActionResult> Get([FromRoute]string tagName)
         {
@@ -48,9 +56,14 @@ namespace RestApi.Controllers.V1
             return Ok(_mapper.Map<TagResponse>(tag));
         }
 
+        /// <summary>
+        /// Creates a new Tag
+        /// </summary>
+        /// <response code="200">Creates a new Tag</response>
+        /// <response code="400">Unable to </response>
         [HttpPost(ApiRoutes.Tags.Create)]
-        [ProducesResponseType(typeof(TagResponse), 201)]
-        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [ProducesResponseType(typeof(TagResponse), 201)] 
+        [ProducesResponseType(typeof(ErrorResponse), 400)] 
         public async Task<IActionResult> Create([FromBody] CreateTagRequest request)
         {
             var newTag = new Tag
@@ -74,6 +87,10 @@ namespace RestApi.Controllers.V1
             return Created(locationUri, response);
         }
 
+        /// <summary>
+        /// Delete a spesific tag by tagName
+        /// </summary>
+        /// <param name="tagName"></param>
         [HttpDelete(ApiRoutes.Tags.Delete)]
         //[Authorize(Roles = "Admin")]
         [Authorize(Policy = "MustWorkForRestApi")]
